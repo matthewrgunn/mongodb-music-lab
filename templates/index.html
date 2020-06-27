@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>MUSIC!</title>
+    </head>
+    <body>
+      <h1 style="text-align:center;">Collective Music Database</h1>
+      <h3>Login</h3>
+    {% if session %}
+        <p>You are logged in as {{  session['username']  }}. <a href="/logout"> Logout</a></p>
+        {% else %}
+            <form method="post" action="/login">
+                <label for="username">What's your username?</label>
+                <input type='text' name='username'>
+                <label for="password">What's your password?</label>
+                <input type='text' name='password'>
+                <input type='submit'>
+            </form>
+        <p>Click <a href="/signup">here</a> to sign up.</p>
+    {% endif %}
+        <h3>Add Music!</h3>
+        <form method="post" action="/add">
+            <label for="mySong">What's one of your favorite songs?</label>
+            <input type='text' name='mySong'>
+            <label for="artist">Who is your song by?</label>
+            <input type='text' name='artist'>
+            <label for="description">What do you like about it?</label>
+            <input type='text' name='description'>
+            <input type='submit'>
+        </form>
+        <h3>Check out the <a href="/show">database!</a></h3>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>MUSIC!</title>
+    </head>
+    <body>
+        <h3>User-Generated Musical Database</h3>
+        <div class="music-list">
+            <ul>
+                {% for data in data %}
+                    <li>{{data.song}} - {{data.artist}} - {{data.description}} ({{ data.name  }})</li>
+                {% endfor %}
+        </ul>
+    </div>
+    </body>
+</html>
